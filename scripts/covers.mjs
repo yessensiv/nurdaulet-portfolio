@@ -18,3 +18,19 @@ await writeFile('dist/assets/docmind.svg',cover('DocMind','Documents into unders
 
 const phone = `<g filter="url(#shadow)">${rect(442,177,316,550,'#152119',38)}${rect(453,188,294,528,'#202e24',29)}${rect(547,197,106,22,'#101a14',11)}${text(477,266,'Flow',30,'#ddf4bd',700)}${text(477,299,'Your media. To go.',14,'#8fa58f')}${rect(477,329,246,56,'#324235',13)}${text(493,363,'Paste a video link',15,'#a1b69b')}${rect(477,402,246,43,'#c0ed83',12)}${text(554,430,'Download',16,'#203b25',700)}${text(477,486,'Your library',19,'#ddf4bd',700)}${rect(477,505,246,78,'#2b3d30',12)}${rect(490,517,49,49,'#546b48',10)}<path d="m510 532 14 10-14 10z" fill="#d2edae"/>${text(550,535,'Saved video',15,'#e2edd9',700)}${text(550,559,'Ready to play',12,'#8fa58f')}${rect(477,596,246,78,'#2b3d30',12)}${rect(490,609,49,49,'#546b48',10)}${text(505,643,'♪',30,'#d2edae')}${text(550,625,'Saved audio',15,'#e2edd9',700)}${text(550,649,'Always with you',12,'#8fa58f')}</g><g fill="none" stroke="#355738" stroke-opacity=".14"><circle cx="600" cy="450" r="340"/><circle cx="600" cy="450" r="410"/></g>`;
 await writeFile('dist/assets/flow-cover.svg',cover('Flow','Your videos. Your music. To go.','#dce7cd','#24412a',phone));
+
+const extras = [
+  ['within','Within','A space for what matters.','#d5ded4','#263d31','Your own pace.','Notes, goals, memories.'],
+  ['san','SAN Portfolio','Code meets visual expression.','#dce6c7','#263321','SAN','Web / Apps / Design'],
+  ['zaga','Zaga Zaga','An independent beverage concept.','#e9ebcf','#3b512d','Stay fresh.','A little more flavor.'],
+  ['front-back','Front / Back','Built together.','#e3e6e8','#303b43','Front ↔ Back','A collaborative development project.'],
+  ['profile','GitHub Profile','Code. Projects. Experiments.','#d5e5de','#214237','yessensiv','Building. Learning. Exploring.'],
+  ['portfolio','This Portfolio','Ideas into digital experiences.','#e9e5dd','#242421','DEVELOPER','Nurdaulet Yessensary']
+];
+for (const [slug,name,subtitle,bg,ink,title,caption] of extras) {
+  let visual = `${rect(160,230,880,480,ink,0)}${text(205,280,name,22,bg,700)}${text(205,407,title,slug==='portfolio'?65:72,bg,700)}${text(205,448,caption,21,bg)}${rect(205,493,181,46,bg,23)}${text(231,523,'Explore project',16,ink,700)}`;
+  if (slug==='within') visual += `${rect(205,569,378,104,'#ffffff12')}${text(225,602,'A thought worth keeping',18,bg)}${line(225,625,320,'#ffffff25')}${rect(601,569,378,104,'#ffffff12')}${text(621,602,'Something to work toward',18,bg)}${line(621,625,286,'#ffffff25')}`;
+  else if (slug==='zaga') visual += `<g transform="translate(782 335) rotate(12)">${rect(0,0,137,292,'#d1de9e',30)}${rect(5,0,127,18,'#bcc2aa',8)}${text(20,108,'ZAGA',32,ink,700)}${text(20,145,'ZAGA',32,ink,700)}${text(25,240,'FRESH',18,ink,700)}</g>`;
+  else visual += `<g opacity=".55">${rect(205,589,220,61,'#ffffff16')}${rect(444,589,220,61,'#ffffff16')}${rect(683,589,296,61,'#ffffff16')}${line(224,614,148,'#ffffff35')}${line(464,614,154,'#ffffff35')}${line(705,614,210,'#ffffff35')}</g>`;
+  await writeFile(`dist/assets/${slug}-cover.svg`,cover(name,subtitle,bg,ink,browser(visual)));
+}
