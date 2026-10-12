@@ -34,3 +34,16 @@ for (const [slug,name,subtitle,bg,ink,title,caption] of extras) {
   else visual += `<g opacity=".55">${rect(205,589,220,61,'#ffffff16')}${rect(444,589,220,61,'#ffffff16')}${rect(683,589,296,61,'#ffffff16')}${line(224,614,148,'#ffffff35')}${line(464,614,154,'#ffffff35')}${line(705,614,210,'#ffffff35')}</g>`;
   await writeFile(`dist/assets/${slug}-cover.svg`,cover(name,subtitle,bg,ink,browser(visual)));
 }
+
+// Real project screens replace illustrative website concepts.
+for (const [file,screen,bg] of [
+  ['ent-math.svg','math','#dee9e2'],
+  ['dentalux-cover.svg','dentalux','#ede4db'],
+  ['within-cover.svg','within','#dce3dc'],
+  ['san-cover.svg','san','#d8decf'],
+  ['zaga-cover.svg','zaga','#e8eacb'],
+  ['portfolio-cover.svg','portfolio','#e9e5dd']
+]) {
+  const screenshot = (await readFile(`dist/assets/${screen}-screen.jpg`)).toString('base64');
+  await writeFile(`dist/assets/${file}`,`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900"><defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="${bg}"/><stop offset="1" stop-color="#f7f5ef"/></linearGradient><filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="26" stdDeviation="24" flood-opacity=".22"/></filter><clipPath id="screen"><rect x="64" y="105" width="1072" height="744" rx="6"/></clipPath></defs><rect width="1200" height="900" fill="url(#bg)"/><g filter="url(#shadow)"><rect x="52" y="62" width="1096" height="798" rx="18" fill="#272826"/><rect x="64" y="105" width="1072" height="744" rx="6" fill="#fff"/><g fill="#93978e"><circle cx="79" cy="83" r="5"/><circle cx="96" cy="83" r="5"/><circle cx="113" cy="83" r="5"/></g><rect x="439" y="73" width="322" height="20" rx="6" fill="#383b35"/><image href="data:image/jpeg;base64,${screenshot}" x="64" y="105" width="1072" height="744" preserveAspectRatio="xMidYMin slice" clip-path="url(#screen)"/></g></svg>`);
+}

@@ -150,4 +150,4 @@ a:hover .rolling-letter,a:focus-visible .rolling-letter,button:hover .rolling-le
 .contact-form input,.contact-form textarea{border-radius:12px}
 .contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--paper);box-shadow:none}
 .contact-form button:focus-visible,.footer a:focus-visible,.navigation a:focus-visible{outline-color:var(--paper)}
-.hero-star{filter:grayscale(1)}
+.hero-star{height:auto;filter:none;will-change:translate,rotate}

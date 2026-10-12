@@ -14,7 +14,7 @@
   const link = (href, text) => `<a class="text-link" aria-label="${escape(text)}" href="${escape(href)}">${rollingText(text)} <span class="arrow-box" aria-hidden="true">↗</span></a>`;
   const portrait = large => `<div class="portrait-card ${large ? 'bio-portrait' : ''}">${data.portrait ? `<img src="${escape(safeUrl(data.portrait))}" alt="GitHub avatar of ${escape(data.name)}" ${large ? 'loading="lazy"' : 'fetchpriority="high"'}>` : `<span class="portrait-monogram" aria-hidden="true">${escape(data.initials)}</span><span class="portrait-note">Portrait coming soon</span>`}</div>`;
   const projectCards = (items = data.projects) => items.map((project, index) => `<a class="project-card reveal" href="/work/${encodeURIComponent(project.slug)}"><div class="project-picture"><img src="${escape(safeUrl(project.image))}" alt="${escape(project.sample ? 'Source template preview for ' + project.title : project.title)}" width="1160" height="800" loading="lazy">${project.sample ? '<span class="sample-label">Template preview</span>' : ''}<span class="project-open" aria-hidden="true">↗</span></div><div class="project-meta"><div><h3>${escape(project.title)}</h3><p>${escape(project.category)}</p></div><span class="project-number">/${String(index + 1).padStart(2, '0')}</span></div></a>`).join('');
-  const projects = standalone => `<section id="work-section" class="projects container">${standalone ? '' : `<div class="section-top reveal"><h2>Featured<br>Projects</h2>${link('/work', 'View All Work')}</div>`}<div class="project-grid">${projectCards(standalone ? data.projects : data.projects.slice(0, 4))}</div></section>`;
+  const projects = standalone => `<section id="work-section" class="projects container">${standalone ? '' : `<div class="section-top reveal"><h2>Featured<br>Projects</h2>${link('/work', 'View All Work')}</div>`}<div class="project-grid">${projectCards(standalone ? data.projects : data.projects.filter(project => ['within', 'san-portfolio', 'zaga-zaga', 'ent-math'].includes(project.slug)))}</div></section>`;
   const socialIcons = {
     GitHub: '<path d="M9 19c-4 1-4-2-6-2m12 5v-4a3.5 3.5 0 0 0-1-3c3-.3 6-1.5 6-6a4.5 4.5 0 0 0-1.3-3.1 4 4 0 0 0-.1-3s-1-.3-3.2 1.2a11 11 0 0 0-5.8 0C7.4 2.6 6.4 2.9 6.4 2.9a4 4 0 0 0-.1 3A4.5 4.5 0 0 0 5 9c0 4.5 3 5.7 6 6a3.5 3.5 0 0 0-1 3v4"/>',
     Instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/>'
@@ -118,12 +118,12 @@
   const motionButton = document.getElementById('motion-control');
   if (word && motionButton) {
     const prefixes = data.roles.map(role => role.replace(/\s*developer\s*/i, '').trim().toUpperCase() || 'WEB');
-    let index = 0, paused = false, timer, transitionTimer, hoverPaused = false;
+    let index = 0, paused = false, timer, transitionTimer;
     word.textContent = prefixes[0];
     const stop = () => { clearInterval(timer); clearTimeout(transitionTimer); word.classList.remove('out', 'enter'); };
     const start = () => {
       stop();
-      if (paused || hoverPaused || reducedMotion.matches || document.hidden || prefixes.length < 2) return;
+      if (paused || reducedMotion.matches || document.hidden || prefixes.length < 2) return;
       timer = setInterval(() => {
         word.classList.add('out');
         transitionTimer = setTimeout(() => {
@@ -141,11 +141,6 @@
       motionButton.querySelector('span').textContent = paused ? 'Resume animation' : 'Pause animation';
       start();
     });
-    const title = document.querySelector('.hero-title');
-    title.addEventListener('mouseenter', () => { hoverPaused = true; start(); });
-    title.addEventListener('mouseleave', () => { hoverPaused = false; start(); });
-    title.addEventListener('focusin', () => { hoverPaused = true; start(); });
-    title.addEventListener('focusout', event => { if (!title.contains(event.relatedTarget)) { hoverPaused = false; start(); } });
     document.addEventListener('visibilitychange', start);
     reducedMotion.addEventListener('change', start);
     start();
