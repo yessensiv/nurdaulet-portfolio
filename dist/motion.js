@@ -24,7 +24,7 @@
     frame = 0;
     const y = window.scrollY;
     const progress = mobile.matches || reduced.matches ? 0 : clamp((y - sceneTop) / sceneHeight);
-    const scale = .5 + .5 * smooth(progress);
+    const scale = mobile.matches ? 1 : .5 + .5 * smooth(progress);
     const rotation = smooth((progress - .08) / .72) * 180;
     const tilt = -9 * Math.sin(Math.PI * progress);
     stage.style.transform = `scale(${scale})`;
