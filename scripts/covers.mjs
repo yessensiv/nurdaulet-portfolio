@@ -35,15 +35,28 @@ for (const [slug,name,subtitle,bg,ink,title,caption] of extras) {
   await writeFile(`dist/assets/${slug}-cover.svg`,cover(name,subtitle,bg,ink,browser(visual)));
 }
 
-// Real project screens replace illustrative website concepts.
-for (const [file,screen,bg] of [
-  ['ent-math.svg','math','#dee9e2'],
-  ['dentalux-cover.svg','dentalux','#ede4db'],
-  ['within-cover.svg','within','#dce3dc'],
-  ['san-cover.svg','san','#d8decf'],
-  ['zaga-cover.svg','zaga','#e8eacb'],
-  ['portfolio-cover.svg','portfolio','#e9e5dd']
-]) {
-  const screenshot = (await readFile(`dist/assets/${screen}-screen.jpg`)).toString('base64');
-  await writeFile(`dist/assets/${file}`,`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900"><defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="${bg}"/><stop offset="1" stop-color="#f7f5ef"/></linearGradient><filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="26" stdDeviation="24" flood-opacity=".22"/></filter><clipPath id="screen"><rect x="64" y="105" width="1072" height="744" rx="6"/></clipPath></defs><rect width="1200" height="900" fill="url(#bg)"/><g filter="url(#shadow)"><rect x="52" y="62" width="1096" height="798" rx="18" fill="#272826"/><rect x="64" y="105" width="1072" height="744" rx="6" fill="#fff"/><g fill="#93978e"><circle cx="79" cy="83" r="5"/><circle cx="96" cy="83" r="5"/><circle cx="113" cy="83" r="5"/></g><rect x="439" y="73" width="322" height="20" rx="6" fill="#383b35"/><image href="data:image/jpeg;base64,${screenshot}" x="64" y="105" width="1072" height="744" preserveAspectRatio="xMidYMin slice" clip-path="url(#screen)"/></g></svg>`);
+// Editorial artwork: project identities rather than interface mockups.
+const artwork = [
+  ['within-cover.svg','Within','A SPACE FOR WHAT MATTERS','#e6e6db','#254537','#98b198','orb'],
+  ['san-cover.svg','SAN','DESIGN / CODE / MOTION','#171a16','#e7eedc','#c2e87d','star'],
+  ['zaga-cover.svg','Zaga Zaga','A LITTLE MORE FLAVOR','#e4edbd','#28482d','#a4c467','wave'],
+  ['ent-math.svg','ENT Math','LEARN / PRACTICE / GROW','#173f39','#e6efdd','#a8d191','math'],
+  ['dentalux-cover.svg','DentaLux','CARE WITH A HUMAN TOUCH','#eae2d5','#36554b','#a2b9aa','orb'],
+  ['docmind.svg','DocMind','THOUGHTS INTO CLARITY','#dedfd6','#353f35','#b6c2ac','paper'],
+  ['flow-cover.svg','Flow','YOUR MEDIA. YOUR RHYTHM.','#17221b','#e7f0d8','#b5dc83','wave'],
+  ['front-back-cover.svg','Front / Back','TWO SIDES. ONE EXPERIENCE.','#dbe2e5','#293f4a','#8facb7','code'],
+  ['profile-cover.svg','yessensiv','CODE / PROJECTS / EXPERIMENTS','#dce7dc','#1d3d30','#9dbb9c','code'],
+  ['portfolio-cover.svg','Nurdaulet','IDEAS INTO DIGITAL EXPERIENCES','#eae6de','#252621','#b2b5a5','star']
+];
+for (const [file,title,caption,bg,ink,accent,motif] of artwork) {
+  let shape='';
+  if(motif==='orb') shape=`<g transform="translate(870 470)"><circle r="250" fill="url(#sphere)"/><ellipse rx="292" ry="85" fill="none" stroke="${ink}" stroke-opacity=".35" stroke-width="2" transform="rotate(-32)"/><ellipse rx="292" ry="85" fill="none" stroke="${bg}" stroke-opacity=".65" stroke-width="2" transform="rotate(32)"/></g>`;
+  if(motif==='star') shape=`<path d="M875 180Q905 410 1135 440Q905 470 875 700Q845 470 615 440Q845 410 875 180Z" fill="url(#sphere)" stroke="${accent}" stroke-width="2" transform="rotate(16 875 440)"/>`;
+  if(motif==='wave') shape=`<g fill="none" stroke="${accent}" stroke-width="19" stroke-linecap="round">${Array.from({length:9},(_,i)=>`<path d="M${635+i*52} ${340+Math.sin(i)*65}v${210-Math.sin(i)*130}"/>`).join('')}</g><circle cx="870" cy="440" r="250" fill="none" stroke="${ink}" stroke-opacity=".15"/>`;
+  if(motif==='math') shape=`<g transform="translate(775 255) rotate(-12)"><rect width="320" height="320" rx="40" fill="url(#sphere)"/>${text(44,219,'∑',230,bg,700)}</g><circle cx="820" cy="430" r="270" fill="none" stroke="${accent}" stroke-opacity=".3"/>`;
+  if(motif==='paper') shape=`<g transform="translate(730 200) rotate(14)">${rect(24,35,300,360,accent,24)}${rect(0,0,300,360,'#f6f6ef',24)}${text(36, 90,'Aa',62,ink,700)}${line(36,146,221,accent)}${line(36,178,180,accent)}${line(36,210,215,accent)}${line(36,266,142,accent)}</g>`;
+  if(motif==='code') shape=`<g transform="translate(620 240) rotate(-8)">${rect(0,0,500,320,ink,32)}${text(54,214,'</>',155,bg,700)}<circle cx="425" cy="65" r="14" fill="${accent}"/></g>`;
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900"><defs><radialGradient id="sphere" cx=".28" cy=".2" r=".8"><stop stop-color="#f5f8ea"/><stop offset=".35" stop-color="${accent}"/><stop offset="1" stop-color="${ink}"/></radialGradient></defs>${rect(0,0,1200,900,bg,0)}<path d="M70 125h1060M70 779h1060" stroke="${ink}" stroke-opacity=".2"/>${text(72,101,caption,17,ink,400)}${text(1072,101,'↗',25,ink)}${shape}${text(70,668,title,title.length>12?78:102,ink,700)}${text(73,741,'NURDAULET YESSENSARY / SELECTED WORK',14,ink)}<circle cx="1113" cy="820" r="8" fill="${ink}"/></svg>`;
+  await writeFile(`dist/assets/${file}`,svg);
 }
+
