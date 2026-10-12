@@ -97,7 +97,11 @@
     if (!target) return;
     event.preventDefault();
     const top = target.getBoundingClientRect().top + window.scrollY - 105;
-    window.scrollTo({ top: Math.max(0, top), behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+    if (window.portfolioScroll) {
+      window.portfolioScroll.scrollTo(Math.max(0, top), { duration: 1.1, lerp: 0 });
+    } else {
+      window.scrollTo({ top: Math.max(0, top), behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+    }
     history.pushState(null, '', targetUrl.hash);
   }));
 

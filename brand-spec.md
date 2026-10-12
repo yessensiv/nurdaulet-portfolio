@@ -17,3 +17,5 @@ Narrative: large role introduction → personal bio → statement → expertise 
 - DentaLux's source image and Flow's source icon are retained. ENT Math, DocMind and Flow use typographic project covers, not invented interface screenshots.
 
 The user explicitly asked to preserve this design, requested an automatically changing developer title, then supplied a 29.77-second recording of the original site's menu, portrait, scrolling, cards, notes, contact and footer. That recording establishes the motion and composition direction for this revision. Four dark approach cards stand in the original testimonial layout; no testimonials have been fabricated. Project notes use the same three-card composition as Thoughts.
+
+Smooth scrolling: local Lenis 1.3.26, wheel interpolation .085 and wheel multiplier .9; anchors use a 1.1s eased transition. Native touch and textarea scrolling are preserved. Reduced-motion changes destroy or restore the smooth-scroll instance. Reference: https://github.com/darkroomengineering/lenis.
