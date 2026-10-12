@@ -31,6 +31,10 @@ window.portfolio = {
     { slug: "docmind", title: "DocMind", category: "AI · Document assistant", image: "assets/docmind.svg", sample: false, description: "A Telegram assistant for summarizing TXT documents and answering questions about their contents. Built with Python, it supports a local demo mode and an API-powered mode, with document isolation and configurable usage limits.", url: "", repository: "https://github.com/yessensiv/docmind-telegram", technologies: ["Python", "Telegram", "AI"] },
     { slug: "flow", title: "Flow", category: "Android · Video & audio", image: "assets/flow-cover.svg", sample: false, description: "An Android video and audio downloader built with Kotlin. Flow offers available format choices, download progress, and a local library for saved files. The repository also includes an experimental web prototype.", url: "", repository: "https://github.com/yessensiv/flow-downloader", technologies: ["Kotlin", "Android", "yt-dlp", "FFmpeg"] }
   ],
+  notes: [
+    { project: "ent-math", title: "Learning, one step at a time", excerpt: "Lessons, practice, and a personal learning route for mathematics." },
+    { project: "docmind", title: "Documents into understanding", excerpt: "Exploring summaries and questions with a Telegram document assistant." }
+  ],
   approach: [
     { title: "Start with why.", text: "Understand the idea, the people it serves, and the problem worth solving." },
     { title: "Keep it simple.", text: "Give every element a purpose. Make the important things easy to find and use." },
