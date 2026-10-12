@@ -37,11 +37,11 @@ for (const [slug,name,subtitle,bg,ink,title,caption] of extras) {
 
 // Editorial artwork: project identities rather than interface mockups.
 const artwork = [
-  ['within-cover.svg','Within','A SPACE FOR WHAT MATTERS','#e6e6db','#254537','#98b198','orb'],
+  ['within-cover.svg','Within','A SPACE FOR WHAT MATTERS','#f1dacb','#753f35','#dc957c','orb'],
   ['san-cover.svg','SAN','DESIGN / CODE / MOTION','#171a16','#e7eedc','#c2e87d','star'],
-  ['zaga-cover.svg','Zaga Zaga','A LITTLE MORE FLAVOR','#e4edbd','#28482d','#a4c467','wave'],
+  ['zaga-cover.svg','Zaga Zaga','A LITTLE MORE FLAVOR','#f3db68','#214c39','#81ac72','wave'],
   ['ent-math.svg','ENT Math','LEARN / PRACTICE / GROW','#173f39','#e6efdd','#a8d191','math'],
-  ['dentalux-cover.svg','DentaLux','CARE WITH A HUMAN TOUCH','#eae2d5','#36554b','#a2b9aa','orb'],
+  ['dentalux-cover.svg','DentaLux','CARE WITH A HUMAN TOUCH','#d8eceb','#174f57','#80bbbd','orb'],
   ['docmind.svg','DocMind','THOUGHTS INTO CLARITY','#dedfd6','#353f35','#b6c2ac','paper'],
   ['flow-cover.svg','Flow','YOUR MEDIA. YOUR RHYTHM.','#17221b','#e7f0d8','#b5dc83','wave'],
   ['front-back-cover.svg','Front / Back','TWO SIDES. ONE EXPERIENCE.','#dbe2e5','#293f4a','#8facb7','code'],
@@ -56,7 +56,9 @@ for (const [file,title,caption,bg,ink,accent,motif] of artwork) {
   if(motif==='math') shape=`<g transform="translate(775 255) rotate(-12)"><rect width="320" height="320" rx="40" fill="url(#sphere)"/>${text(44,219,'∑',230,bg,700)}</g><circle cx="820" cy="430" r="270" fill="none" stroke="${accent}" stroke-opacity=".3"/>`;
   if(motif==='paper') shape=`<g transform="translate(730 200) rotate(14)">${rect(24,35,300,360,accent,24)}${rect(0,0,300,360,'#f6f6ef',24)}${text(36, 90,'Aa',62,ink,700)}${line(36,146,221,accent)}${line(36,178,180,accent)}${line(36,210,215,accent)}${line(36,266,142,accent)}</g>`;
   if(motif==='code') shape=`<g transform="translate(620 240) rotate(-8)">${rect(0,0,500,320,ink,32)}${text(54,214,'</>',155,bg,700)}<circle cx="425" cy="65" r="14" fill="${accent}"/></g>`;
-  const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900"><defs><radialGradient id="sphere" cx=".28" cy=".2" r=".8"><stop stop-color="#f5f8ea"/><stop offset=".35" stop-color="${accent}"/><stop offset="1" stop-color="${ink}"/></radialGradient></defs>${rect(0,0,1200,900,bg,0)}<path d="M70 125h1060M70 779h1060" stroke="${ink}" stroke-opacity=".2"/>${text(72,101,caption,17,ink,400)}${text(1072,101,'↗',25,ink)}${shape}${text(70,668,title,title.length>12?78:102,ink,700)}${text(73,741,'NURDAULET YESSENSARY / SELECTED WORK',14,ink)}<circle cx="1113" cy="820" r="8" fill="${ink}"/></svg>`;
+  const words=title.split(' ');
+  const display=words.length>1?words.map((word,i)=>text(72,280+i*123,word,110,ink,700)).join(''):text(72,290,title,title.length>8?98:140,ink,700);
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800"><defs><radialGradient id="sphere" cx=".28" cy=".2" r=".8"><stop stop-color="#f5f8ea"/><stop offset=".35" stop-color="${accent}"/><stop offset="1" stop-color="${ink}"/></radialGradient><linearGradient id="wash" x2="1" y2="1"><stop stop-color="${accent}" stop-opacity=".05"/><stop offset="1" stop-color="${accent}" stop-opacity=".7"/></linearGradient></defs>${rect(0,0,1200,800,bg,0)}<path d="M750 0h450v800H360Z" fill="url(#wash)"/><g opacity=".18" fill="none" stroke="${ink}"><circle cx="920" cy="420" r="370"/><circle cx="920" cy="420" r="400"/><circle cx="920" cy="420" r="430"/></g>${text(75,92,'SELECTED / '+String(artwork.findIndex(item=>item[0]===file)+1).padStart(2,'0'),18,ink)}<g transform="translate(45 75) scale(.94)">${shape}</g>${display}${text(77,words.length>1?460:357,caption,19,ink)}<path d="M74 650h130" stroke="${ink}" stroke-width="3"/>${text(75,708,'DESIGN &amp; DEVELOPMENT',18,ink)}<g transform="translate(1058 643)"><circle cx="40" cy="40" r="40" fill="${ink}"/><path d="m24 55 32-32m-32 0h32v32" fill="none" stroke="${bg}" stroke-width="3"/></g></svg>`;
   await writeFile(`dist/assets/${file}`,svg);
 }
 

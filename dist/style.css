@@ -151,3 +151,5 @@ a:hover .rolling-letter,a:focus-visible .rolling-letter,button:hover .rolling-le
 .contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--paper);box-shadow:none}
 .contact-form button:focus-visible,.footer a:focus-visible,.navigation a:focus-visible{outline-color:var(--paper)}
 .hero-star{height:auto;filter:none;will-change:translate,rotate}
+.project-picture{aspect-ratio:1.5}
+@media(max-width:809px){.project-picture{aspect-ratio:1.5}}
