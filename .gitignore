@@ -6,3 +6,4 @@ screenshots/
 .media-tools/
 reference-frames/
 *.zip
+.vercel/
