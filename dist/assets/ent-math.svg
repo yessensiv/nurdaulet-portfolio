@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="800" viewBox="0 0 1160 800">
+<defs><pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse"><path d="M64 0H0V64" fill="none" stroke="#ffffff" stroke-opacity=".055"/></pattern></defs>
+<rect width="1160" height="800" fill="#122824"/><rect width="1160" height="800" fill="url(#grid)"/>
+<g fill="none" stroke="#93e9bf" stroke-width="2"><circle cx="933" cy="394" r="206" opacity=".22"/><circle cx="933" cy="394" r="150" opacity=".35"/><path d="M703 540Q858 180 1110 323" opacity=".5"/><path d="M718 220 1078 610" opacity=".35"/></g>
+<circle cx="968" cy="407" r="8" fill="#c4f8db"/><text x="76" y="104" fill="#94bfaf" font-family="Arial,sans-serif" font-size="18" letter-spacing="4">LEARN. PRACTICE. UNDERSTAND.</text>
+<text x="70" y="371" fill="#edf8f0" font-family="Arial,sans-serif" font-size="124" font-weight="700" letter-spacing="-6">ENT Math.</text>
+<text x="78" y="430" fill="#b4c7be" font-family="Arial,sans-serif" font-size="28">Mathematics, one idea at a time.</text>
+<text x="78" y="702" fill="#d2e9da" font-family="Arial,sans-serif" font-size="20">GRADES 5–11</text><text x="1050" y="702" fill="#94bfaf" font-family="Arial,sans-serif" font-size="20" text-anchor="end">/ EDUCATION</text>
+</svg>

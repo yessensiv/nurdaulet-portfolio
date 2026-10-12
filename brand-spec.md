@@ -12,7 +12,8 @@ Narrative: large role introduction → personal bio → statement → expertise 
 - Container 1200px, fluid with 40px desktop and 20px mobile gutters; 8px spacing basis.
 - Source radii: 20px navigation/cards, 8–10px controls. Minimal shadows.
 - Motion: 600ms ease-out role swaps every 3.8 seconds, subtle reveals, floating source stars, hover feedback. Pause control, background-tab suspension, and reduced-motion support.
-- Original grain and stars are in dist/assets. Sample project images are labelled as template previews, never claimed as the user’s work.
-- The portrait uses initials until the user supplies a photograph. Contact requires a real address; no fabricated delivery or testimonials.
+- Original grain and stars are in dist/assets. Project descriptions, technology information and links were verified from the user's public GitHub profile and the four repository READMEs.
+- The portrait uses the GitHub avatar. The public profile's email and Instagram are used as contact information. The form prepares a mailto message; no fabricated delivery or testimonials.
+- DentaLux's source image and Flow's source icon are retained. ENT Math, DocMind and Flow use typographic project covers, not invented interface screenshots.
 
 The user explicitly asked to preserve this design and requested an automatically changing developer title. These instructions establish the design direction.
