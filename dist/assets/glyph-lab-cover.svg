@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<defs><radialGradient id="glow"><stop stop-color="#afc7ab" stop-opacity=".18"/><stop offset="1" stop-color="#111713" stop-opacity="0"/></radialGradient></defs>
+<rect width="1200" height="800" fill="#111713"/><circle cx="910" cy="400" r="480" fill="url(#glow)"/>
+<g stroke="#a6b99d" stroke-opacity=".1"><path d="M600 0v800M800 0v800M1000 0v800M0 200h1200M0 400h1200M0 600h1200"/></g>
+<text x="72" y="96" fill="#a9b9a3" font-family="monospace" font-size="19" letter-spacing="3">PIXELS IN. CHARACTERS OUT.</text>
+<g font-family="monospace" font-size="32" fill="#a9c99c" text-anchor="middle" letter-spacing="6">
+<text x="900" y="236">.:+*+=:.</text><text x="900" y="277">.:*#@@@@#*:.</text><text x="900" y="318">:+#@@@@@@@@#+:</text><text x="900" y="359">=*@@@#++#@@@*=</text><text x="900" y="400">+@@@+.  .+@@@+</text><text x="900" y="441">*@@@+.  .+@@@*</text><text x="900" y="482">=*@@@#++#@@@*=</text><text x="900" y="523">:+#@@@@@@@@#+:</text><text x="900" y="564">.:*#@@@@#*:.</text><text x="900" y="605">.:+*+=:.</text>
+</g>
+<g fill="#eef0e6" font-family="Arial,sans-serif" font-weight="700" font-size="128" letter-spacing="-6"><text x="66" y="302">Glyph</text><text x="66" y="428">Lab</text></g>
+<text x="74" y="492" fill="#a9b9a3" font-family="monospace" font-size="22">IMAGE → ASCII</text>
+<path d="M74 654h130" stroke="#a9c99c" stroke-width="3"/>
+<text x="74" y="711" fill="#a9b9a3" font-family="monospace" font-size="18">UPLOAD / REFINE / EXPORT</text>
+<circle cx="1098" cy="686" r="40" fill="#a9c99c"/><path d="m1082 702 32-32m-32 0h32v32" fill="none" stroke="#111713" stroke-width="3"/>
+</svg>
