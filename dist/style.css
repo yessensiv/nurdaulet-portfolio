@@ -162,3 +162,8 @@ a:hover .rolling-letter,a:focus-visible .rolling-letter,button:hover .rolling-le
 html[lang=ru] .hero-title h1{font-size:min(144px,16svh,11.5vw)}html[lang=ru] .page-intro h1{font-size:clamp(48px,8vw,124px)}
 @media(max-width:809px){.language-switch{top:10px}.language-switch button{height:44px;width:26px}html[lang=ru] .hero-title h1{font-size:9vw}html[lang=ru] .page-intro h1{font-size:clamp(36px,10vw,70px)}html[lang=ru] .section-top h2{font-size:40px}}
 
+
+/* Keep the GitHub callout inset at every breakpoint. */
+.notes-more{min-width:0;padding:28px}.notes-more>p{max-width:100%;overflow-wrap:anywhere;text-wrap:balance}.notes-more .text-link{max-width:100%;gap:10px}
+@media(max-width:809px){.notes-more{padding:28px;gap:32px}.notes-more>p{font-size:clamp(26px,5.8vw,34px);line-height:1.18}.notes-more .text-link{font-size:17px}}
+
