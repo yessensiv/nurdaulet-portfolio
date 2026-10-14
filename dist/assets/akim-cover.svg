@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#dce5dd"/>
+  <g fill="none" stroke="#bccbbf" stroke-width="2"><path d="M620 0v800M800 0v800M980 0v800M0 200h1200M0 400h1200M0 600h1200"/></g>
+  <g fill="#7e9c88" stroke="#dce5dd" stroke-width="10" transform="translate(680 195)"><path d="M0 60 145 0 160 180 20 200Z"/><path d="m145 0 210 45-15 150-180-15Z"/><path d="m20 200 140-20 30 180L0 325Z"/><path d="m160 180 180 15 25 140-175 25Z"/><path d="m355 45 90 100-80 190-25-140Z"/></g>
+  <g fill="#213e30" font-family="Arial,sans-serif"><text x="75" y="92" font-size="18">TEAM 3-MUSKETEERS / CITY SIMULATOR</text><text x="72" y="275" font-size="86" font-weight="700">Аким</text><text x="72" y="373" font-size="86" font-weight="700">на 5 часов</text><text x="77" y="434" font-size="19">FIVE INITIATIVES. ONE CITY.</text><path d="M74 650h130" stroke="#213e30" stroke-width="3"/><text x="75" y="708" font-size="20">HACKALEM AI — 94 POINTS</text></g>
+  <g transform="translate(1058 643)"><circle cx="40" cy="40" r="40" fill="#213e30"/><path d="m24 55 32-32m-32 0h32v32" fill="none" stroke="#dce5dd" stroke-width="3"/></g>
+</svg>
