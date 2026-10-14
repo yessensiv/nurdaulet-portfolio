@@ -157,3 +157,8 @@ a:hover .rolling-letter,a:focus-visible .rolling-letter,button:hover .rolling-le
 .footer-wordmark{font-size:clamp(24px,12.8vw,220px);padding-inline:20px;letter-spacing:-.055em;line-height:1.02}
 .footer-wordmark span{display:block}
 
+
+.navigation{padding-right:116px}.menu-toggle{position:absolute;right:12px}.language-switch{position:absolute;right:64px;top:12px;display:flex;gap:2px}.language-switch button{border:0;background:transparent;color:#a9a9a3;font-size:11px;padding:0;width:24px;height:36px;border-radius:6px}.language-switch button[aria-pressed=true]{color:var(--paper);font-weight:700}.language-switch button:focus-visible{outline-color:var(--paper)}
+html[lang=ru] .hero-title h1{font-size:min(144px,16svh,11.5vw)}html[lang=ru] .page-intro h1{font-size:clamp(48px,8vw,124px)}
+@media(max-width:809px){.language-switch{top:10px}.language-switch button{height:44px;width:26px}html[lang=ru] .hero-title h1{font-size:9vw}html[lang=ru] .page-intro h1{font-size:clamp(36px,10vw,70px)}html[lang=ru] .section-top h2{font-size:40px}}
+

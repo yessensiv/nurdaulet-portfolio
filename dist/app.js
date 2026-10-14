@@ -1,6 +1,7 @@
 (() => {
   'use strict';
   const data = window.portfolio;
+  const t = window.portfolioI18n?.t || (value => value);
   const main = document.getElementById('main');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
@@ -46,6 +47,7 @@
       document.title = `Page not found — ${data.name}`;
     }
   }
+  window.portfolioI18n?.apply();
   document.querySelectorAll('[data-short-name]').forEach(el => { el.textContent = data.shortName; });
   document.querySelectorAll('[data-full-name]').forEach(el => { el.textContent = data.name; });
   document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
@@ -71,7 +73,7 @@
     menu.inert = true;
     menuCloseTimer = setTimeout(() => { menu.hidden = true; }, reducedMotion.matches ? 0 : 420);
     menuButton.setAttribute('aria-expanded', 'false');
-    menuButton.setAttribute('aria-label', 'Open navigation');
+    menuButton.setAttribute('aria-label', t('Open navigation'));
     if (restoreFocus) menuButton.focus();
   }
   menuButton.addEventListener('click', () => {
@@ -82,7 +84,7 @@
     menu.inert = false;
     requestAnimationFrame(() => navigation.classList.add('is-open'));
     menuButton.setAttribute('aria-expanded', String(opening));
-    menuButton.setAttribute('aria-label', opening ? 'Close navigation' : 'Open navigation');
+    menuButton.setAttribute('aria-label', t(opening ? 'Close navigation' : 'Open navigation'));
   });
   menu.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });
   document.addEventListener('click', event => { if (!event.target.closest('.navigation')) closeMenu(); });
@@ -117,7 +119,7 @@
   const word = document.getElementById('role-word');
   const motionButton = document.getElementById('motion-control');
   if (word && motionButton) {
-    const prefixes = data.roles.map(role => role.replace(/\s*developer\s*/i, '').trim().toUpperCase() || 'WEB');
+    const prefixes = data.roles.map(role => t(role.replace(/\s*developer\s*/i, '').trim().toUpperCase() || 'WEB'));
     let index = 0, paused = false, timer, transitionTimer;
     word.textContent = prefixes[0];
     const stop = () => { clearInterval(timer); clearTimeout(transitionTimer); word.classList.remove('out', 'enter'); };
@@ -137,8 +139,8 @@
     motionButton.addEventListener('click', () => {
       paused = !paused;
       motionButton.setAttribute('aria-pressed', String(paused));
-      motionButton.setAttribute('aria-label', paused ? 'Resume title animation' : 'Pause title animation');
-      motionButton.querySelector('span').textContent = paused ? 'Resume animation' : 'Pause animation';
+      motionButton.setAttribute('aria-label', t(paused ? 'Resume title animation' : 'Pause title animation'));
+      motionButton.querySelector('span').textContent = t(paused ? 'Resume animation' : 'Pause animation');
       start();
     });
     document.addEventListener('visibilitychange', start);
@@ -152,9 +154,9 @@
     const status = document.getElementById('form-status');
     if (!email) { status.textContent = 'My contact address hasn’t been added yet. Your message has not been sent.'; return; }
     const fields = new FormData(form);
-    const subject = encodeURIComponent(`Portfolio enquiry from ${fields.get('name')}`);
-    const body = encodeURIComponent(`Name: ${fields.get('name')}\nEmail: ${fields.get('email')}\n\n${fields.get('project')}`);
+    const subject = encodeURIComponent(`${window.portfolioI18n?.lang === 'ru' ? 'Сообщение из портфолио от' : 'Portfolio enquiry from'} ${fields.get('name')}`);
+    const body = encodeURIComponent(`${t('Name')}: ${fields.get('name')}\n${t('Email')}: ${fields.get('email')}\n\n${fields.get('project')}`);
     location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-    status.textContent = 'Your prepared message is opening in your email app. Send it there to complete your enquiry.';
+    status.textContent = window.portfolioI18n?.lang === 'ru' ? 'Письмо открывается в почтовом приложении. Отправь его, чтобы завершить обращение.' : 'Your prepared message is opening in your email app. Send it there to complete your enquiry.';
   });
 })();
