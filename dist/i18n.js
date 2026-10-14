@@ -2,7 +2,7 @@
   let saved;
   try { saved = localStorage.getItem('portfolio-language'); } catch {}
   const requested = new URLSearchParams(location.search).get('lang');
-  const lang = (requested || saved) === 'ru' ? 'ru' : 'en';
+  const lang = (requested || saved) === 'en' ? 'en' : 'ru';
   const dictionary = {
     'Skip to content':'Перейти к содержимому','About Me':'Обо мне','Services':'Услуги','Projects':'Проекты','Contact':'Контакты','Home':'Главная','Works':'Работы',
     '/Quick links':'/Навигация','/Contact':'/Контакты','Back to top ↗':'Наверх ↗','Ideas into':'От идей —','digital experiences.':'к цифровому опыту.',
