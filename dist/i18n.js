@@ -9,7 +9,7 @@
     'Featured':'Избранные','Selected':'Избранные','Projects':'Проекты','Work.':'работы.','View All Work':'Все проекты','Hey!':'Привет!','Get in touch':'Связаться','Thoughts':'Заметки','How I work.':'Как я работаю.',
     'Let’s talk.':'Давай обсудим.','Have an idea, a project, or just want to say hello? Let’s start a conversation.':'Есть идея, проект или просто хочется поздороваться? Давай начнём разговор.',
     'Name':'Имя','Email':'Электронная почта','Your name':'Твоё имя','Your Project':'Твой проект','Tell me a little about your idea…':'Расскажи немного о своей идее…','Prepare email':'Подготовить письмо','Opens your email app with a prepared message.':'Откроется почтовое приложение с готовым письмом.',
-    'All projects':'Все проекты','Visit project':'Открыть проект','View on GitHub':'Код на GitHub','Explore GitHub':'Посмотреть GitHub',
+    'All projects':'Все проекты','Visit project':'Открыть проект','View on GitHub':'Код на GitHub','Explore GitHub':'Посмотреть GitHub','Message on Telegram':'Написать в Telegram',
     'Code, projects, experiments—':'Код, проекты, эксперименты —','explore what I’m building.':'посмотри, что я создаю.',
     'Web experiences, Android apps, and AI tools. A selection of my projects and experiments.':'Сайты, Android-приложения и инструменты с ИИ. Мои проекты и эксперименты.',
     'Pause animation':'Остановить анимацию','Resume animation':'Продолжить анимацию','Pause title animation':'Остановить анимацию заголовка','Resume title animation':'Продолжить анимацию заголовка','Open navigation':'Открыть меню','Close navigation':'Закрыть меню',

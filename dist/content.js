@@ -15,6 +15,7 @@ window.portfolio = {
   // Supply your real email to enable the contact form. It opens a prepared email.
   email: "netabasyn@gmail.com",
   socialLinks: [
+    { label: "Telegram", url: "https://t.me/prfctiv" },
     { label: "GitHub", url: "https://github.com/yessensiv" },
     { label: "Instagram", url: "https://instagram.com/timushiv" }
   ],
