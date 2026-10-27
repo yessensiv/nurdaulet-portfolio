@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f2e8d6"/><stop offset="1" stop-color="#d9c6a8"/></linearGradient><radialGradient id="light"><stop stop-color="#ffe8a9" stop-opacity=".65"/><stop offset="1" stop-color="#ffe8a9" stop-opacity="0"/></radialGradient></defs>
+<rect width="1200" height="800" fill="url(#bg)"/><circle cx="875" cy="405" r="315" fill="#e5d5b8"/>
+<g transform="translate(560 150)">
+<ellipse cx="285" cy="470" rx="280" ry="55" fill="#5d493a" opacity=".12"/>
+<path d="M20 330 280 180 550 330 290 480Z" fill="#ae8461"/><path d="M20 330V60L280 210v270Z" fill="#b9bea1"/><path d="M280 210 550 60v270L280 480Z" fill="#e4d9bc"/>
+<path d="M20 60 280 210 550 60 290-90Z" fill="none"/>
+<path d="m347 189 123-69v142l-123 69Z" fill="#68584b"/><path d="m357 194 103-58v117l-103 58Z" fill="#869c9a"/><path d="m406 166v116m-48-32 102-57" stroke="#eadfc7" stroke-width="7"/>
+<circle cx="397" cy="243" r="125" fill="url(#light)"/>
+<path d="m62 305 101-58 123 71-101 59Z" fill="#45584a"/><path d="M62 305v62l123 71v-61Z" fill="#536a56"/><path d="m185 377 101-59v61l-101 59Z" fill="#334837"/>
+<path d="m62 271 101-58 23 13-101 59Z" fill="#70856a"/><path d="M62 271v34l123 71v-34Z" fill="#70856a"/>
+<path d="m321 365 91-52 77 44-91 53Z" fill="#a36d47"/><path d="M321 365v51m168-59v51m-91 2v51" stroke="#795035" stroke-width="10"/>
+<path d="m351 347 41-24 35 21-41 24Z" fill="#efe2bd"/><path d="m364 343 28-16 22 13-28 16Z" fill="#5c6e53"/>
+<path d="m204 441 49-28 68 39-49 29Z" fill="#dfc49b"/><path d="M249 430v-46" stroke="#586448" stroke-width="5"/><g fill="#6e8055"><ellipse cx="235" cy="396" rx="15" ry="30" transform="rotate(-30 235 396)"/><ellipse cx="263" cy="382" rx="14" ry="30" transform="rotate(30 263 382)"/></g><path d="m232 423 35 1-7 29h-21Z" fill="#9f6b4d"/>
+<path d="m99 154 63 36v70l-63-36Z" fill="#f0dfba"/><path d="m108 171 43 24v43l-43-24Z" fill="#8b795b"/>
+</g>
+<g font-family="Arial,sans-serif" fill="#493e31"><text x="72" y="96" font-size="18" letter-spacing="3">YOUR OWN QUIET CORNER</text><text x="66" y="324" font-size="116" font-weight="700" letter-spacing="-6">MyRoom</text><text x="74" y="383" font-size="25">A room. A playlist. A little peace.</text><text x="74" y="706" font-size="18" letter-spacing="2">SPACE / MUSIC / ATMOSPHERE</text></g>
+<path d="M74 644h126" stroke="#493e31" stroke-width="3"/>
+</svg>
